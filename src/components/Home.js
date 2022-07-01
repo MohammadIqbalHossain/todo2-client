@@ -24,7 +24,6 @@ const Home = () => {
 
     const handleTask = () => {
         fetch(`https://bloc-chesterfield-02084.herokuapp.com/task`, {
-            mode: "no-cors",
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +50,6 @@ const Home = () => {
         if (confirmation) {
             const url = `https://bloc-chesterfield-02084.herokuapp.com/task/${id}`
             fetch(url, {
-                mode: "no-cors",
                 method: "DELETE"
             })
                 .then(res => res.json())
