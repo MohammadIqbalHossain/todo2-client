@@ -7,7 +7,7 @@ const CompletedTask = () => {
     console.log(completedTasks);
 
     useEffect(() => {
-        fetch(` http://localhost:5000/allCompletedTask`)
+        fetch(` https://bloc-chesterfield-02084.herokuapp.com/allCompletedTask`)
             .then(res => res.json())
             .then(data => setCompletedTasks(data))
     }, [])

@@ -23,7 +23,8 @@ const Home = () => {
     }
 
     const handleTask = () => {
-        fetch(`http://localhost:5000/task`, {
+        fetch(`https://bloc-chesterfield-02084.herokuapp.com/task`, {
+            mode: "no-cors",
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +39,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/taskData`)
+        fetch(`https://bloc-chesterfield-02084.herokuapp.com/taskData`)
             .then(res => res.json())
             .then(data => setAllTasks(data));
 
@@ -48,8 +49,9 @@ const Home = () => {
     const handleDeleteItem = id => {
         const confirmation = window.confirm("Are you sure?");
         if (confirmation) {
-            const url = `http://localhost:5000/task/${id}`
+            const url = `https://bloc-chesterfield-02084.herokuapp.com/task/${id}`
             fetch(url, {
+                mode: "no-cors",
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -64,7 +66,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/editTask/${id}`)
+        fetch(`https://bloc-chesterfield-02084.herokuapp.com/editTask/${id}`)
             .then(res => res.json())
             .then(data => setCompletedTask(data));
 
@@ -77,7 +79,8 @@ const Home = () => {
     }
 
     const handleCompletedTask = () => {
-        fetch(`http://localhost:5000/completedTask`, {
+        fetch(`https://bloc-chesterfield-02084.herokuapp.com/completedTask`, {
+            mode: "no-cors",
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
